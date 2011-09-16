@@ -1,0 +1,23 @@
+config:
+  irc:
+    host: "irc.freenode.net"
+    port: 6666
+    charset: "utf8"
+    nick: "ictelecom"
+    channels:
+      - "#botwars"
+    aliases:
+      botwars: "#botwars"
+      
+  skype:
+    channels:
+    - name: bottest
+      channel: "#mcahriman/$pdobot;42e15e5f35b9cda6"
+  admins:
+    - login: admin
+      password: secret
+      nicknames:
+        irc: manfred
+#actually that is my skype id, you can send some spam to
+        skype: mcahriman
+
