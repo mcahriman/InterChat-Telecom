@@ -1,6 +1,7 @@
 from InterChatSkypeListener import InterchatSkypeListener
 import threading
 import Skype4Py
+import sys
 
 class InterChatSkypeThread():
   def __init__(self, dispatcher):
@@ -16,6 +17,9 @@ class InterChatSkypeThread():
   def writeToChannel(self, message, channel):
     print(channel)
     if(channel):
+      try:
         chanTo = self.skypeObj.Chat(channel)
         chanTo.SendMessage(message)
         return True
+      except:
+        print "Message could not be sent:", sys.exc_info()[0]
