@@ -1,4 +1,4 @@
-ICTelecom Bot V0.0
+ICTelecom Bot V0.0.2
 
    !help: показать это сообщение
    !channels: показать список каналов
