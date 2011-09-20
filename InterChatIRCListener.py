@@ -13,7 +13,7 @@ class InterChatIRCListener(IRCBot):
         ('!help', self.help),
         ('!tele', self.tele),
         ('!status', self.getstatus),
-        ('!channels', self.getChannels),
+#        ('!channels', self.getChannels),
         ('!listen', self.listen),
         ('!mute', self.mute),
         ('!crzslap', self.slap)
