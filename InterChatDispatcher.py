@@ -41,7 +41,7 @@ class InterChatDispatcher():
         rmessage = "tele from {0}@{1}: {2}".format(nick, channel, body)
         if(channelTo['type'] == 'irc'):          
           self.irc_thread.writeToChannel(rmessage, channelTo['channel'])
-        if(channelTo['type'] == 'skype'):
+        elif(channelTo['type'] == 'skype'):
           self.skype_thread.writeToChannel(rmessage, channelTo['channel'])
   def helpToChannel(self, channel, message):
     with open('help.txt','r') as f:
@@ -52,6 +52,8 @@ class InterChatDispatcher():
   def dispatchMessage(self, chatname, sendername, body):
 #    print body
     channel = self.chatMgr.getChanelById(chatname)
+    if( sendername in ['pdobot', 'ictelecom'] ):
+      return False;
     for channelTo in self.chatMgr.getAliases():
       channelToFull = self.chatMgr.getChanelByAlias(channelTo)
       if(self.chatMgr.isListening(channelTo, channel['alias'])):

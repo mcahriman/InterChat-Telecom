@@ -6,4 +6,4 @@ class InterchatSkypeListener():
       return self.dispatcher
   def MessageStatus ( self, message, status ):
        print message.Chat.Name
-       self.getDispatcher().dispatchMessage(message.Chat.Name, message.Sender.FullName, message.Body )
+       self.getDispatcher().dispatchMessage(message.Chat.Name, message.Sender.Handle, message.Body )
