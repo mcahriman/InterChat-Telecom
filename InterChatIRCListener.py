@@ -5,7 +5,7 @@ class InterChatIRCListener(IRCBot):
       self.dispatcher = dispatcher;
       IRCBot.__init__(self,connexion)
   def getDispatcher(self):
-    return dispatcher;
+    return self.dispatcher;
 
   def command_patterns(self):
       return (
@@ -13,7 +13,7 @@ class InterChatIRCListener(IRCBot):
         ('!help', self.help),
         ('!tele', self.tele),
         ('!status', self.getstatus),
-#        ('!channels', self.getChannels),
+        ('!channels', self.getChannels),
         ('!listen', self.listen),
         ('!mute', self.mute),
         ('!crzslap', self.slap)

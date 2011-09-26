@@ -26,7 +26,6 @@ class InterChatDispatcher():
     return "oui"
 
   def dispatchMessageToChannel(self, channel, message):
-    print channel
     channelTo = self.chatMgr.getChanelByAlias(channel)
     if(channelTo['type'] == 'irc'):          
       self.irc_thread.writeToChannel(message, channelTo['channel'])
@@ -44,7 +43,7 @@ class InterChatDispatcher():
         elif(channelTo['type'] == 'skype'):
           self.skype_thread.writeToChannel(rmessage, channelTo['channel'])
   def helpToChannel(self, channel, message):
-    with open('help.txt','r') as f:
+    with open('config/help.txt','r') as f:
       for i,l in enumerate(f):
         self.dispatchMessageToChannel(channel, l)
   def getChannelList(self):
