@@ -1,3 +1,4 @@
+#test
 from irc import IRCBot, IRCConnection
 
 class InterChatIRCListener(IRCBot):
